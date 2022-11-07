@@ -1,0 +1,46 @@
+a[priority],
+a.priority {
+  font-size: 0px;
+}
+a[priority]::before {
+  font-size: var(--ls-page-text-size);
+}
+a[priority=A]::before,
+a.priority[href="#/page/A" i]:before {
+  content: "P1";
+  visibility: visible;
+}
+a[priority=B]::before,
+a.priority[href="#/page/B" i]:before {
+  content: "P2";
+  visibility: visible;
+}
+a[priority=C]::before,
+a.priority[href="#/page/C" i]:before {
+  content: "P3";
+  visibility: visible;
+}
+a.priority[href="#/page/A" i],
+[href="#/page/B" i],
+[href="#/page/C" i] {
+  visibility: hidden;
+  width: 1.5em;
+  height: 1.5em;
+  white-space: nowrap;
+  position: relative;
+}
+a[priority]::before,
+a.priority::before {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 650;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  width: 38px;
+  margin-left: -3px;
+}
+a.tooltip-priority:first-of-type::before {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
